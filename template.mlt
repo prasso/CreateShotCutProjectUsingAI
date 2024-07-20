@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt>
+  <profile description="automatic" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="25" frame_rate_den="1" colorspace="709"/>
+  <profile description="PAL 4:3 DV or DVD" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="25" frame_rate_den="1" colorspace="709"/>
+  <tractor id="tractorlogo" in="00:00:00.000" out="00:00:00.640">
+    <property name="shotcut:transition">lumaMix</property>
+    <property name="meta.shotcut.vui">1</property>
+    <track producer="prassologo" in="00:00:01.160" out="00:00:01.800"/>
+    <track producer="prassologo" in="00:00:01.160" out="00:00:01.800"/>
+    <transition id="transition0" out="00:00:00.640">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+      <property name="fix_background_alpha">1</property>
+    </transition>
+    <transition id="transition1" out="00:00:00.640">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+    </transition>
+    <filter id="filter0" out="00:00:00.640">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">0 0 1920 1080 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </tractor>
+  <tractor id="tractor0" title="Shotcut version 23.11.29" global_feed="1">
+    <property name="shotcut">1</property>
+    <track producer="background"/>
+    <track producer="playlist0"/>
+  </tractor>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <entry producer="prassologo" in="00:00:00.000" out="00:00:01.120"/>
+    <entry producer="tractorlogo" in="00:00:00.000" out="00:00:00.640"/>
+  </playlist>
+  <playlist id="main_bin" >
+    <property name="xml_retain">1</property>
+  </playlist>
+</mlt>
