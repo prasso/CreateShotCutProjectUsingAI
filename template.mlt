@@ -24,6 +24,11 @@
     <property name="xml_retain">1</property>
     <entry producer="producerlogo0" in="00:00:00.000" out="00:00:03.960"/>
   </playlist>
+   <playlist id="playlist1">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A1</property>
+    <blank length="00:00:00.040"/>
+  </playlist>
   <producer id="black" in="00:00:00.000" out="00:00:05.960">
     <property name="length">00:00:06.000</property>
     <property name="eof">pause</property>
@@ -65,7 +70,7 @@
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">1</property>
     <track producer="background"/>
-    <track producer="playlist0"/>
+    <track producer="playlist1"/>
     <track producer="main_bin"/>
     <transition id="transition0">
       <property name="a_track">0</property>

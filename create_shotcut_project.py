@@ -1,3 +1,4 @@
+# python3 ./create_shotcut_project.py
 import os
 import re
 import xml.etree.ElementTree as ET
@@ -78,9 +79,9 @@ def create_shotcut_project(folder, output_file):
         
         # Add the chain to the playlist
         entry_attribs = {"producer": producer_id, "in": "00:00:00.000", "out": str(out_str)}
-        playlist = root.find("./playlist[@id='main_bin']")
+        playlist = root.find("./playlist[@id='playlist1']")
         if playlist is None:
-            print("Error: 'main_bin' playlist not found in template.")
+            print("Error: 'playlist1' playlist not found in template.")
             return
         ET.SubElement(playlist, "entry", attrib=entry_attribs)
     
@@ -90,7 +91,7 @@ def create_shotcut_project(folder, output_file):
 
 # Specify the folder containing the .wav files and the output file
 folder = "./"
-output_file = "PrassoBusinessUsecase-generated.mlt"
+output_file = "PrassoAdminFundamentalsWAudioTrack.mlt"
 
 # Create the Shotcut project
 create_shotcut_project(folder, output_file)
