@@ -91,7 +91,7 @@ def create_shotcut_project(folder, output_file):
 
 # Specify the folder containing the .wav files and the output file
 folder = "./"
-output_file = "PrassoAdminFundamentalsWAudioTrack.mlt"
+output_file = "AddInvenbinPackageToLaravelProject-audioonly.mlt"
 
 # Create the Shotcut project
 create_shotcut_project(folder, output_file)
